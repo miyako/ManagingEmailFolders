@@ -1,0 +1,11 @@
+@media (prefers-color-scheme: light) {
+ .textTheme {
+    alternateFill: Red;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .textTheme {
+    alternateFill: Yellow;
+  }
+}

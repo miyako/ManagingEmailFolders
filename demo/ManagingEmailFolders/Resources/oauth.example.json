@@ -1,0 +1,9 @@
+{
+  "Google": {
+    "clientId": "YOUR GOOGLE CLIENT ID",
+    "clientSecret": "YOUR GOOGLE CLIENT SECRET"
+  },
+  "Microsoft": {
+    "clientId": "YOUR MICROSOFT CLIENT ID"
+  }
+}

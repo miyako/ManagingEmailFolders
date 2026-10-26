@@ -111,3 +111,21 @@ The approved cover omits the note number and uses the byline `Trina Nguyen（4D 
 | 4D NetKit Email Example | 4D NetKit Email Example | OAuth画面のアプリ名。原文にあるNetkitの大小文字の違いも引用では保持。 |
 | HDI Manage Mails | HDI Manage Mails | 図13のアプリ名。表示値として保持。 |
 | Fabrice Mainguené | Fabrice Mainguené | 人名を原綴りで保持。 |
+
+## Demo UI
+
+The approved demo scope retains English and adds Japanese XLIFF resources.
+The UI follows 4D's language; fetched account data and provider error details are not translated.
+
+| English | 日本語 | Notes |
+|---|---|---|
+| Intro | 概要 | デモの導入タブ。 |
+| Run Demo | デモを開く | 既存の画面がある場合は再利用する。 |
+| Sign in | サインイン | Google、Microsoftの接続ボタン。 |
+| To | 宛先 | メールの入力欄。 |
+| From | 差出人 | メールの入力欄と一覧の列見出し。 |
+| Subject | 件名 | メールの入力欄と一覧の列見出し。 |
+| Body | 本文 | メールの入力欄。 |
+| Send Email | メールを送信 | 送信ボタン。 |
+| Create / Rename / Delete | 作成 / 名前を変更 / 削除 | デモのメニューとダイアログ。 |
+| Error | エラー | デモ側のメッセージ。APIが返す詳細は原文を保持する。 |

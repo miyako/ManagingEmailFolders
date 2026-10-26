@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="configuration" source-language="en" target-language="ja">
+    <body>
+      <trans-unit id="ConfigurationMissing" resname="ConfigurationMissing">
+        <source>OAuth configuration is missing. Copy Resources/oauth.example.json to Resources/oauth.local.json and enter your application credentials before signing in to {provider}.</source>
+        <target>OAuthの設定ファイルがありません。Resources/oauth.example.jsonをResources/oauth.local.jsonにコピーし、{provider}にサインインする前に、ご自身のアプリケーションの認証情報を入力してください。</target>
+      </trans-unit>
+      <trans-unit id="ConfigurationInvalid" resname="ConfigurationInvalid">
+        <source>OAuth configuration could not be read. Check that Resources/oauth.local.json is readable and contains a valid JSON object.</source>
+        <target>OAuthの設定ファイルを読み込めませんでした。Resources/oauth.local.jsonが読み取り可能で、正しいJSONオブジェクトが記述されていることを確認してください。</target>
+      </trans-unit>
+      <trans-unit id="ConfigurationProviderMissing" resname="ConfigurationProviderMissing">
+        <source>Resources/oauth.local.json must contain a configuration object for {provider}.</source>
+        <target>Resources/oauth.local.jsonに、{provider}の設定オブジェクトを記述してください。</target>
+      </trans-unit>
+      <trans-unit id="ConfigurationFieldsMissing" resname="ConfigurationFieldsMissing">
+        <source>Enter a nonempty clientId for {provider} in Resources/oauth.local.json. Google also requires clientSecret. Replace the example placeholders with your own application credentials.</source>
+        <target>Resources/oauth.local.jsonに、{provider}のclientIdを入力してください。GoogleではclientSecretも必要です。サンプルの仮の値を、ご自身のアプリケーションの認証情報に置き換えてください。</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
