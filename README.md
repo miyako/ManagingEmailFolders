@@ -15,7 +15,7 @@ OAuth 2.0による接続とアクセストークンの取得から、メール�
 | 4Dデモ | [ManagingEmailFolders.zip](https://github.com/miyako/ManagingEmailFolders/releases/download/v1.0.0/ManagingEmailFolders.zip) |
 | 原文（英語） | [document/24-13_4DNetKit.pdf](document/24-13_4DNetKit.pdf) |
 
-ダウンロードリンクは[v1.0.0](https://github.com/miyako/ManagingEmailFolders/releases/tag/v1.0.0)の公開後に有効になります。
+[v1.0.0](https://github.com/miyako/ManagingEmailFolders/releases/tag/v1.0.0)から日本語PDFと4Dデモをダウンロードできます。
 
 ## Demo
 
