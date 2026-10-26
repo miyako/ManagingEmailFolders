@@ -4,7 +4,9 @@ Keep terminology consistent across `src/<target>.md` and `figures/*.<target>.txt
 Change an entry here first, then search and replace in both places.
 
 Style (ja): です・ます調. Half-width alphanumerics, no space between Japanese and Latin text (e.g. `4D.Vector型`).
-Full-width `（）` and `：` in prose. First occurrence of a technical term: 日本語（English）.
+Full-width `（）` and `：` in prose. Per the editor's direction, do not add English glosses after Japanese terms,
+including on first occurrence. Keep API identifiers, product names and quoted UI labels where needed.
+The approved cover omits the note number and uses the byline `Trina Nguyen（4D Inc. テクニカルサービスエンジニア）`.
 
 ## 4D terms (from the official 4D Japanese documentation)
 
@@ -64,7 +66,7 @@ Full-width `（）` and `：` in prose. First occurrence of a technical term: �
 | importance flag | 重要度フラグ | メールの重要度。 |
 | tenant | テナント | Microsoft Entraの管理単位。 |
 | Microsoft Identity Platform | Microsoft IDプラットフォーム | [4D公式日本語記事][ms-access]の表記に準拠。 |
-| Cloud Application Administrator | クラウドアプリケーション管理者 | Azureのロール名の訳。英語名を初出に併記する。 |
+| Cloud Application Administrator | クラウドアプリケーション管理者 | Azureのロール名の訳。本文に英語の補足を付けない。 |
 | Web Application Expansion license | Web Application Expansionライセンス | 製品名を原文のまま保持。現在のライセンス要件を保証する記述には変更しない。レビュー対象。 |
 | Your App | アプリ | 図01の短いラベル。 |
 | Google Servers | Googleサーバー | 図01。 |

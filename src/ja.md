@@ -1,18 +1,16 @@
 # 4D NetKitによるメールとフォルダーの管理
 
-著者：Trina Nguyen（4D Inc.のテクニカルサービスエンジニア）
-
-テクニカルノート24-13
+Trina Nguyen（4D Inc. テクニカルサービスエンジニア）
 
 ## 概要
 
-インターネットでより安全なプロトコルの採用が進むのに伴い、認可（authorization）の仕組みも進化しています。OAuth 2.0は、従来のユーザー名とパスワードを使う方式に代わる、より安全なログイン手順として導入されました。OAuth 2.0では、他のWebアプリから得たユーザー情報を含むトークン（token）を使い、自分のプラットフォームでユーザーを認証（authentication）するため、ユーザーが何度もログインする必要がありません。4D 19R3で導入された4D NetKitは、4Dアプリケーションと外部のWebサービスおよびそのAPIの間のOAuth 2.0接続を管理し、これらのトークンを取得します。このテクニカルノートでは、4D NetKitの基本と、GoogleのGmailおよびMicrosoftのOffice365への接続方法を説明します。
+インターネットでより安全なプロトコルの採用が進むのに伴い、認可の仕組みも進化しています。OAuth 2.0は、従来のユーザー名とパスワードを使う方式に代わる、より安全なログイン手順として導入されました。OAuth 2.0では、他のWebアプリから得たユーザー情報を含むトークンを使い、自分のプラットフォームでユーザーを認証するため、ユーザーが何度もログインする必要がありません。4D 19R3で導入された4D NetKitは、4Dアプリケーションと外部のWebサービスおよびそのAPIの間のOAuth 2.0接続を管理し、これらのトークンを取得します。このテクニカルノートでは、4D NetKitの基本と、GoogleのGmailおよびMicrosoftのOffice365への接続方法を説明します。
 
 ## はじめに
 
-4D NetKitの中心となるOAuth 2.0は、オンラインの認可における業界標準のプロトコルです。4Dは以前からIMAP、SMTP、POP3のトランスポーター（transporter）でOAuth 2.0をサポートしていましたが、4D NetKitの導入により、Webブラウザーの起動と認証処理をより簡単に管理できるようになりました。
+4D NetKitの中心となるOAuth 2.0は、オンラインの認可における業界標準のプロトコルです。4Dは以前からIMAP、SMTP、POP3のトランスポーターでOAuth 2.0をサポートしていましたが、4D NetKitの導入により、Webブラウザーの起動と認証処理をより簡単に管理できるようになりました。
 
-OAuth 2.0では、アクセストークン（access token）とリフレッシュトークン（refresh token）の2種類のトークンを使います。アクセストークンは従来のユーザー名とパスワードの代わりとなり、その取得時にはWebブラウザーからユーザーに認可が要求されます。アクセストークンの有効期限が切れると、OAuth 2.0はリフレッシュトークンのフラグが有効になっているかどうかを確認します。リフレッシュトークンはRESTを通じて取得され、アクセストークンの有効期限が切れた後も接続を維持し、期限が切れるたびに新しいアクセストークンを継続して取得できるようにします。このフラグが有効でない場合、ユーザーは新しいアクセストークンを取得するために、Webブラウザーで再び認証をおこなう必要があります。
+OAuth 2.0では、アクセストークンとリフレッシュトークンの2種類のトークンを使います。アクセストークンは従来のユーザー名とパスワードの代わりとなり、その取得時にはWebブラウザーからユーザーに認可が要求されます。アクセストークンの有効期限が切れると、OAuth 2.0はリフレッシュトークンのフラグが有効になっているかどうかを確認します。リフレッシュトークンはRESTを通じて取得され、アクセストークンの有効期限が切れた後も接続を維持し、期限が切れるたびに新しいアクセストークンを継続して取得できるようにします。このフラグが有効でない場合、ユーザーは新しいアクセストークンを取得するために、Webブラウザーで再び認証をおこなう必要があります。
 
 ![](fig-01)
 
@@ -22,7 +20,7 @@ OAuth 2.0では、アクセストークン（access token）とリフレッシ�
 
 まず、最新バージョンの4Dをインストールする必要があります。また、トークンの到着を待ち受けて受信するために、Web Application Expansionライセンスが必要です。このテクニカルノートで説明するメソッドと添付のサンプルデータベースには、4D 20 R6以降が必要です。
 
-4D NetKitを使い始めるには、最初にクライアントID（client ID）とクライアントシークレット（client secret）を設定します。添付のサンプルデータベースにはデモ用に登録済みのアプリケーションが用意されていますが、開発者が自分のプログラムで使う場合は、自分でアプリケーションを登録する必要があります。このテクニカルノートでは、GoogleのGmail APIとMicrosoftのOffice365 APIについて、その設定方法を説明します。
+4D NetKitを使い始めるには、最初にクライアントIDとクライアントシークレットを設定します。添付のサンプルデータベースにはデモ用に登録済みのアプリケーションが用意されていますが、開発者が自分のプログラムで使う場合は、自分でアプリケーションを登録する必要があります。このテクニカルノートでは、GoogleのGmail APIとMicrosoftのOffice365 APIについて、その設定方法を説明します。
 
 ## クライアントシークレットを取得するためのGoogleアプリケーションの登録
 
@@ -44,7 +42,7 @@ Googleアプリケーションのクライアントシークレットを取得�
 ![](fig-04)
 
 7. **Edit app registration**画面で必須項目を入力します。アプリのドメインの項目は、この時点では空欄のままでかまいません。**Save and Continue**をクリックして次に進みます。
-8. **Scopes**画面で、**Save and Continue**をクリックします。アプリケーションに適した追加のスコープ（scope）は、後から設定できます。
+8. **Scopes**画面で、**Save and Continue**をクリックします。アプリケーションに適した追加のスコープは、後から設定できます。
 9. **Test users**画面で、**Add Users**をクリックし、Testingモードでこのアプリケーションを使うユーザーのメールアドレスを追加します。**Save and continue**をクリックします。
 
 ![](fig-05)
@@ -77,7 +75,7 @@ https://support.google.com/cloud/answer/13463073?authuser=3&visit_id=63862239506
 
 ## 接続の確立とアクセストークンの取得
 
-Googleからアクセストークンを取得して接続を確立するには、まず4D NetKitのOAuth2Providerオブジェクト（object）を作成し、前のセクションで取得したクライアントシークレットなどの情報を設定します。
+Googleからアクセストークンを取得して接続を確立するには、まず4D NetKitのOAuth2Providerオブジェクトを作成し、前のセクションで取得したクライアントシークレットなどの情報を設定します。
 
 ```4d
 // Creates the object that contains all the information for the OAuth2 connection
@@ -97,9 +95,9 @@ $param.scope:="https://www.googleapis.com/auth/gmail.send"
 return cs.NetKit.OAuth2Provider.new($param)
 ```
 
-`.permission`引数（parameter）は、MicrosoftまたはGoogleを通じてユーザーをサインインさせる「signedIn」を使うのか、Microsoftにアプリケーション自身のIDでアクセスするのか、またはGoogleにユーザーなしでアクセスするのかを指定します。クライアントIDとクライアントシークレットには、前のセクションで取得したシークレットのJSONファイルにある値を使います。リダイレクトURI（redirect URI）は「signedIn」モードでのみ使用し、認証後にサーバーがユーザーを転送する場所を指定します。通常は、認可が成功したことを確認するために使います。スコープは、開発者がユーザーに同意を求めるAPIの権限の集合です。
+`.permission`引数は、MicrosoftまたはGoogleを通じてユーザーをサインインさせる「signedIn」を使うのか、Microsoftにアプリケーション自身のIDでアクセスするのか、またはGoogleにユーザーなしでアクセスするのかを指定します。クライアントIDとクライアントシークレットには、前のセクションで取得したシークレットのJSONファイルにある値を使います。リダイレクトURIは「signedIn」モードでのみ使用し、認証後にサーバーがユーザーを転送する場所を指定します。通常は、認可が成功したことを確認するために使います。スコープは、開発者がユーザーに同意を求めるAPIの権限の集合です。
 
-次に、`.getToken()`メソッド（method）を使うと、既定のブラウザーウィンドウでURLが開き、ユーザーが認証情報を入力して接続できます。次のコードでは、上のコードで示した*GoogleProvider*メソッドが返すOAuth2オブジェクトを使います。
+次に、`.getToken()`メソッドを使うと、既定のブラウザーウィンドウでURLが開き、ユーザーが認証情報を入力して接続できます。次のコードでは、上のコードで示した*GoogleProvider*メソッドが返すOAuth2オブジェクトを使います。
 
 ```4d
 var $google : cs.NetKit.Google
@@ -130,7 +128,7 @@ Gmail APIで4D NetKitを使う最初の例として、メールの送信を説�
 $google:=cs.NetKit.Google.new(Form.oAuth2; New object("mailType"; "JMAP"))
 ```
 
-作成したオブジェクトには、メールを送信する`mail.send()`関数（function）が含まれています。
+作成したオブジェクトには、メールを送信する`mail.send()`関数が含まれています。
 
 ```4d
 // Email creation
@@ -144,7 +142,7 @@ $email.textBody:=”this is a Gmail API test"
 $status:=$google.mail.send($email)
 ```
 
-メールを取得するには、`.getMailIds()`関数を使って受信トレイ（inbox）内のすべてのメールIDを取得します。特定のIDのメール内容をダウンロードするには、`.getMail()`関数を使います。`.getMails()`関数を使って、`$mailIds`からメールのコレクション（collection）を取得することもできます。メールはMIME形式またはJMAP形式で返されます。
+メールを取得するには、`.getMailIds()`関数を使って受信トレイ内のすべてのメールIDを取得します。特定のIDのメール内容をダウンロードするには、`.getMail()`関数を使います。`.getMails()`関数を使って、`$mailIds`からメールのコレクションを取得することもできます。メールはMIME形式またはJMAP形式で返されます。
 
 ```4d
 #DECLARE($OAuth2Provider : cs.NetKit.OAuth2Provider; $param : Object; $winRef : Integer)
@@ -178,7 +176,7 @@ $status:=$google.mail.delete($mailIds.mailIds.first().id; False)
 
 ## メールラベルの作成・更新・割り当て
 
-メールのラベル（label）は、`.createLabel()`関数で簡単に作成できます。次の例では「Backup」というラベルを作成します。
+メールのラベルは、`.createLabel()`関数で簡単に作成できます。次の例では「Backup」というラベルを作成します。
 
 ```4d
 $status:=$google.mail.createLabel({name: "Backup"})
@@ -214,7 +212,7 @@ $status:=$google.mail.update($mailIds; {removeLabelIds: ["IMPORTANT"]})
 
 NetKitを使ってMicrosoft 365に接続する前に、Microsoft Entra管理センターでアプリケーションを登録する必要があります。
 
-Microsoftへのアプリケーション登録には、いくつかの前提条件があります。有効なサブスクリプションを持つAzureアカウントが必要で、少なくともクラウドアプリケーション管理者（Cloud Application Administrator）のロールが割り当てられている必要があります。また、テナント（tenant）を設定するクイックスタートを完了しておく必要があります。
+Microsoftへのアプリケーション登録には、いくつかの前提条件があります。有効なサブスクリプションを持つAzureアカウントが必要で、少なくともクラウドアプリケーション管理者のロールが割り当てられている必要があります。また、テナントを設定するクイックスタートを完了しておく必要があります。
 
 これらの手順については、次のリンク先にあるMicrosoftの説明に従ってください。https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate
 
@@ -260,7 +258,7 @@ Form.oAuth2.getToken()
 $office365:=cs.NetKit.Office365.new($oAuth2; New object("mailType"; "Microsoft"))
 ```
 
-次に、送信するメールのオブジェクトを作成します。次のコード例では、Microsoft Graphの「メッセージリソース型（message resource type）」の形式を使います。
+次に、送信するメールのオブジェクトを作成します。次のコード例では、Microsoft Graphの「メッセージリソース型」の形式を使います。
 
 ```4d
 var $office365 : cs.NetKit.Office365
@@ -315,7 +313,7 @@ End for each
 
 ## メールフォルダーの作成・名前の変更・削除
 
-フォルダー（folder）は、`.createFolder()`関数を使う1行のコードで簡単に作成できます。作成したフォルダーには、`.move()`コマンドを使ってすぐにメールを移動できます。次のコードでは、「Backup」フォルダーの作成とメールの移動を示します。
+フォルダーは、`.createFolder()`関数を使う1行のコードで簡単に作成できます。作成したフォルダーには、`.move()`コマンドを使ってすぐにメールを移動できます。次のコードでは、「Backup」フォルダーの作成とメールの移動を示します。
 
 ```4d
 // Creates a new folder in the root
@@ -348,7 +346,7 @@ $status:=$office365.mail.deleteFolder($folderId)
 
 ## 参考資料
 
-4D NetKitと、そのすべてのクラス（class）およびコマンドのドキュメントは、4DのGitHubリポジトリで公開されています。Google、Microsoft、および基本となるOAuth2Providerクラスで4D NetKitを使う追加の例は、Fabrice Mainguenéによる4Dブログの記事とサンプルデータベースで紹介されています。どちらの資料も、次のリンクから参照できます。
+4D NetKitと、そのすべてのクラスおよびコマンドのドキュメントは、4DのGitHubリポジトリで公開されています。Google、Microsoft、および基本となるOAuth2Providerクラスで4D NetKitを使う追加の例は、Fabrice Mainguenéによる4Dブログの記事とサンプルデータベースで紹介されています。どちらの資料も、次のリンクから参照できます。
 
 https://github.com/4d/4D-NetKit
 
