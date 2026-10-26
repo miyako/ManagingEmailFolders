@@ -73,5 +73,4 @@ macOSではヒラギノ、LinuxではNoto CJKを使用するため、PDFや図�
 ## Credits
 
 - 原著：Trina Nguyen（4D Inc. テクニカルサービスエンジニア）、Technical Note 24-13。
-- 日本語版編集：[miyako](https://github.com/miyako)。
 - [4D technical note localisation template](https://github.com/miyako/4d-technote-localisation-template)とGitHub Copilotを使用しています。
