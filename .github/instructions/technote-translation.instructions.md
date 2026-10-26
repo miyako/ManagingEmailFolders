@@ -212,7 +212,13 @@ The workflow is in the skill `technote-localise-4d-project`; the 4D rules are in
   runs `Compile project` on the whole project (expect `success: true` and no errors). `--new-data` starts with an
   empty data file; `--component DIR` copies a component bundle (e.g. from the 4D dependency cache: tool4d does not
   download GitHub dependencies) into `Components/`. The repository is never modified. tool4d is looked up in `$TOOL4D`, `tools/4dcli/` (provisioned by the `4dcli` skill), then the standard
-  install locations.
+  install locations. A nonzero runtime exit, missing/empty result file, or a compile result without
+  `"success": true` fails the command.
+- **Offline localisation checks:** `.venv/bin/python -m unittest discover -s tools -p 'test_demo_localisation.py'`
+  checks the demo's bilingual resources, placeholders, references, bindings and credential templates.
+  Set `RUN_DEMO_RUNTIME=1` to also check exact English/Japanese string resolution and configuration error paths
+  through `tools/tool4d.py`. Set `TOOL4D`, `NETKIT_COMPONENT` and `SVG_COMPONENT` to compatible local installations
+  when needed. These checks do not sign in, send mail or modify account folders.
 - Forms can't be displayed headlessly: ask the user to check window flow and label fit in 4D.
 
 ## Verification checklist (before release)
