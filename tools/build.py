@@ -102,7 +102,7 @@ def to_html(md_text: str, toc_pages: dict, lang: str) -> str:
         out.append(l)
     body_md = "\n".join(out)
 
-    body = markdown.markdown(body_md, extensions=["fenced_code", "tables", "attr_list"])
+    body = markdown.markdown(body_md, extensions=["fenced_code", "tables", "attr_list", "sane_lists"])
     body = re.sub(
         r'<p><img alt="([^"]*)" src="(fig-\d+)" /></p>',
         lambda m: (f'<figure><img src="figures/{m.group(2)}.png" alt="" style="width:{fig_width(m.group(2))}pt">'

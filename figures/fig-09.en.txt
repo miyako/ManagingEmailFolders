@@ -1,0 +1,17 @@
+Google Workspace
+VIEW ALL (31)
+Google Drive API
+Google Calendar API
+Gmail API
+Google Sheets API
+Google Enterprise API
+Google Enterprise API
+Google Enterprise API
+Google Enterprise API
+Create and manage resources in
+Manage calendars and events in
+View and manage Gmail mailbox
+Read and write Google Sheets data
+Google Drive.
+Google Calendar.
+data.

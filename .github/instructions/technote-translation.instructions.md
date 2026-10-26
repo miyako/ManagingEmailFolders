@@ -187,9 +187,10 @@ submodule is updated. Reusable procedures belong in that skill, not in this refe
 1. Check: code blocks are compared by position, ```` ```text ```` blocks are skipped, and the sets of figure
    references must match. Any mismatch aborts with a diff.
 2. Render the figures.
-3. Markdown → HTML (`fenced_code`, `tables`, `attr_list`).
+3. Markdown → HTML (`fenced_code`, `tables`, `attr_list`, `sane_lists`).
    - The cover comes from the first lines of `<tgt>.md`, and the TOC is generated from the headings.
    - Figures become `<figure>` with `width:{width_pt}pt`.
+   - Ordered lists retain their starting number, including instructions interrupted by figures.
 4. The CSS is `style/style.css` plus injected `:root{--accent}` and `@page{size}`. Chrome is run headless
    (`--headless=new --no-pdf-header-footer --print-to-pdf`) twice; the second pass fills in the TOC page numbers,
    found by searching each heading in the first-pass PDF with pymupdf. Page numbers use `@page` margin boxes

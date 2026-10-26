@@ -36,7 +36,8 @@
   },
   "caption": {
     "italic": false,
-    "min_x": 71
+    "min_x": 71,
+    "pattern": "^Figure\\s+\\d"
   },
   "quote": {
     "italic": true

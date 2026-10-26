@@ -1,0 +1,26 @@
+Credentials
++ CREATE CREDENTIALS
+DELETE
+RESTORE DELETED CREDENTIALS
+API key
+Create credentials to act
+Identifies your project using a simple API key to check quota and access
+OAuth client ID
+API Keys
+Requests user consent so your app can access the user's data
+Service account
+Name
+Restric
+Enables server-to-server, app-level authentication using robot accounts
+No API keys to displa
+Help me choose
+OAuth 2.0 Client
+Asks a few questions to help you decide which type of credential to use
+Creation date
+Name
+Type
+No OAuth clients to display
+Service Accounts
+Email
+Name
+No service accounts to display

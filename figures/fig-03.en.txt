@@ -1,0 +1,13 @@
+Credentials
++ CREATE CREDENTIALS
+DELETE
+RESTORE DELETED CREDENTIALS
+Create credentials to access your enabled APIs. Learn
+Remember to configure the OAuth consent screen with information about your application.
+CONFIGURE CONSENT SCREEN
+API Keys
+Name
+Creation date
+Restrictions
+Actions
+No API keys to display

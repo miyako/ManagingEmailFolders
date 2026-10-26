@@ -1,0 +1,12 @@
+Your App
+Google Servers
+Request token
+User login & consent
+User
+Authorization
+code
+Exchange code
+for token
+Token response
+Use token to call
+Google API

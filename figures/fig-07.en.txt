@@ -1,0 +1,10 @@
+OAuth client created
+The client ID and secret can always be accessed from Credentials in APIs &
+Services
+OAuth access is restricted to the test users listed on your
+OAuth consent screen
+Client ID
+Client secret
+Creation date
+Enabled
+Status

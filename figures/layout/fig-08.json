@@ -1,0 +1,53 @@
+{
+ "source": "fig-08.png",
+ "page": 7,
+ "width_pt": 168.0,
+ "localize": false,
+ "items": [
+  {
+   "box": [
+    32,
+    44,
+    343,
+    32
+   ],
+   "align": "center"
+  },
+  {
+   "box": [
+    128,
+    155,
+    275,
+    20
+   ],
+   "align": "center"
+  },
+  {
+   "box": [
+    127,
+    315,
+    128,
+    20
+   ],
+   "align": "center"
+  },
+  {
+   "box": [
+    0,
+    366,
+    379,
+    80
+   ],
+   "align": "center"
+  },
+  {
+   "box": [
+    128,
+    476,
+    276,
+    24
+   ],
+   "align": "center"
+  }
+ ]
+}
