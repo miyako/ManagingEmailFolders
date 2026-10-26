@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="menu" source-language="en" target-language="en">
+    <body>
+      <trans-unit id="MenuItemDemo" resname="MenuItemDemo"><source>Run Demo</source><target>Run Demo</target></trans-unit>
+      <trans-unit id="MenuFolderActions" resname="MenuFolderActions"><source>New folder;Delete folder;Rename folder</source><target>New folder;Delete folder;Rename folder</target></trans-unit>
+      <trans-unit id="MenuNewFolder" resname="MenuNewFolder"><source>New folder</source><target>New folder</target></trans-unit>
+      <trans-unit id="MenuLabelActions" resname="MenuLabelActions"><source>New label;Delete label;Rename label</source><target>New label;Delete label;Rename label</target></trans-unit>
+      <trans-unit id="MenuNewLabel" resname="MenuNewLabel"><source>New label</source><target>New label</target></trans-unit>
+    </body>
+  </file>
+</xliff>

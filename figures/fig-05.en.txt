@@ -1,0 +1,12 @@
+Edit app registration
+OAuth consent screen — Scopes — Test users — Summary
+Test users
+While publishing status is set to "Testing", only test users are able to access
+the app. Allowed user cap prior to app verification is 100, and is counted over
+the entire lifetime of the app. Learn more
+Filter
+Enter property name or value
+User information
+No rows to display
+SAVE AND CONTINUE
+CANCEL

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="messages" source-language="en" target-language="ja">
+    <body>
+      <trans-unit id="AlertEmailSent" resname="AlertEmailSent"><source>Email sent</source><target>メールを送信しました。</target></trans-unit>
+      <trans-unit id="AlertError" resname="AlertError"><source>Error: {error}</source><target>エラー：{error}</target></trans-unit>
+      <trans-unit id="AlertMissingMailFields" resname="AlertMissingMailFields"><source>Fields "from" and "to" must be filled.</source><target>「差出人」と「宛先」を入力してください。</target></trans-unit>
+      <trans-unit id="AlertButtonCreate" resname="AlertButtonCreate"><source>Create</source><target>作成</target></trans-unit>
+      <trans-unit id="AlertButtonDelete" resname="AlertButtonDelete"><source>Delete</source><target>削除</target></trans-unit>
+      <trans-unit id="AlertButtonRename" resname="AlertButtonRename"><source>Rename</source><target>名前を変更</target></trans-unit>
+      <trans-unit id="RequestNewLabelName" resname="RequestNewLabelName"><source>New label name:</source><target>新しいラベルの名前を入力してください：</target></trans-unit>
+      <trans-unit id="ConfirmDeleteLabel" resname="ConfirmDeleteLabel"><source>Would you delete the label: {name}</source><target>ラベル「{name}」を削除しますか？</target></trans-unit>
+      <trans-unit id="RequestRenameLabel" resname="RequestRenameLabel"><source>Rename label '{name}' to:</source><target>ラベル「{name}」の新しい名前を入力してください：</target></trans-unit>
+      <trans-unit id="RequestNewFolderName" resname="RequestNewFolderName"><source>New folder name:</source><target>新しいフォルダーの名前を入力してください：</target></trans-unit>
+      <trans-unit id="ConfirmDeleteFolder" resname="ConfirmDeleteFolder"><source>Would you delete the folder: {name}</source><target>フォルダー「{name}」を削除しますか？</target></trans-unit>
+      <trans-unit id="RequestRenameFolder" resname="RequestRenameFolder"><source>Rename folder '{name}' to:</source><target>フォルダー「{name}」の新しい名前を入力してください：</target></trans-unit>
+    </body>
+  </file>
+</xliff>

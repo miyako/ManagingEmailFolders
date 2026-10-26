@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="Form1" source-language="en" target-language="ja">
+    <body>
+      <trans-unit id="Form1_WindowTitle" resname="Form1_WindowTitle"><source>Demo</source><target>デモ</target></trans-unit>
+      <trans-unit id="Form1_TabControl" resname="Form1_TabControl"><source>Tab control</source><target>タブコントロール</target></trans-unit>
+      <trans-unit id="Form1_Introduction" resname="Form1_Introduction"><source>This sample database will go over using 4D Netkit to connect to and interact with &#13;- Google's Gmail API&#13;- Microsoft's Graph API&#13;&#13;This demo will allow you to &#13;- send and receive emails&#13;- create email labels/folders&#13;&#13;Click on one of the tabs above to get started&#13;</source><target>このサンプルデータベースでは、4D Netkitを使用して次のAPIに接続し、操作する方法を紹介します。&#13;- GoogleのGmail API&#13;- MicrosoftのGraph API&#13;&#13;このデモでは、次の操作ができます。&#13;- メールの送受信&#13;- メールのラベル／フォルダーの作成&#13;&#13;上のタブをクリックして始めてください。&#13;</target></trans-unit>
+      <trans-unit id="Form1_SignInGoogle" resname="Form1_SignInGoogle"><source>Sign in to Google</source><target>Googleにサインイン</target></trans-unit>
+      <trans-unit id="Form1_SendingEmails" resname="Form1_SendingEmails"><source>Sending Emails</source><target>メールの送信</target></trans-unit>
+      <trans-unit id="Form1_To" resname="Form1_To"><source>To:</source><target>宛先：</target></trans-unit>
+      <trans-unit id="Form1_From" resname="Form1_From"><source>From:</source><target>差出人：</target></trans-unit>
+      <trans-unit id="Form1_Subject" resname="Form1_Subject"><source>Subject: </source><target>件名：</target></trans-unit>
+      <trans-unit id="Form1_Body" resname="Form1_Body"><source>Body:</source><target>本文：</target></trans-unit>
+      <trans-unit id="Form1_SendEmail" resname="Form1_SendEmail"><source>Send Email</source><target>メールを送信</target></trans-unit>
+      <trans-unit id="Form1_GmailLabels" resname="Form1_GmailLabels"><source>Gmail Labels</source><target>Gmailのラベル</target></trans-unit>
+      <trans-unit id="Form1_HeaderLabels" resname="Form1_HeaderLabels"><source>Labels</source><target>ラベル</target></trans-unit>
+      <trans-unit id="Form1_HeaderFrom" resname="Form1_HeaderFrom"><source>From</source><target>差出人</target></trans-unit>
+      <trans-unit id="Form1_HeaderSubject" resname="Form1_HeaderSubject"><source>Subject</source><target>件名</target></trans-unit>
+      <trans-unit id="Form1_EmailsWithLabel" resname="Form1_EmailsWithLabel"><source>List of Emails with Label</source><target>ラベル付きメールの一覧</target></trans-unit>
+      <trans-unit id="Form1_GoogleSignInInstructions" resname="Form1_GoogleSignInInstructions"><source>First, click on the Sign in button below to obtain the access token from Google. Because of Google's protection against MITM phishing, they require the authentication to be based in the browser. Click on Advanced &gt; Go to Netkit example (unsafe). Then fill out the rest of the boxes to create and send an email</source><target>まず、下のサインインボタンをクリックしてGoogleからアクセストークンを取得します。GoogleではMITMフィッシング対策のため、ブラウザーでの認証が必要です。「Advanced &gt; Go to Netkit example (unsafe)」をクリックします。その後、残りの入力欄に記入してメールを作成し、送信します。</target></trans-unit>
+      <trans-unit id="Form1_LabelInstructions" resname="Form1_LabelInstructions"><source>Right click in the label box to create, delete, or rename labels. </source><target>ラベル欄を右クリックすると、ラベルの作成、削除、名前の変更ができます。</target></trans-unit>
+      <trans-unit id="Form1_SystemLabelsNote" resname="Form1_SystemLabelsNote"><source>NOTE: System labels cannot be renamed or deleted</source><target>注：システムラベルの名前の変更や削除はできません。</target></trans-unit>
+      <trans-unit id="Form1_RecentLabelEmailsNote" resname="Form1_RecentLabelEmailsNote"><source>This example shows the most recent 10 emails with the label</source><target>この例では、ラベル付きの最新10件のメールを表示します。</target></trans-unit>
+      <trans-unit id="Form1_TwoFactorNote" resname="Form1_TwoFactorNote"><source>NOTE: If you have 2FA enabled for your account, you may need to first verify your identity on a second device before it allows you to connect. Click on the Sign in button again afterwards to go through the login process again to receive the token. </source><target>注：アカウントで2要素認証を有効にしている場合、接続前に別のデバイスで本人確認が必要になることがあります。その後、サインインボタンをもう一度クリックしてログイン手順をやり直し、トークンを取得してください。</target></trans-unit>
+      <trans-unit id="Form1_SignInMicrosoft" resname="Form1_SignInMicrosoft"><source>Sign in to Microsoft</source><target>Microsoftにサインイン</target></trans-unit>
+      <trans-unit id="Form1_OutlookAccountNote" resname="Form1_OutlookAccountNote"><source>NOTE: Please sign in using an Outlook account, not an Exchange server account</source><target>注：Exchangeサーバーのアカウントではなく、Outlookアカウントでサインインしてください。</target></trans-unit>
+      <trans-unit id="Form1_OutlookFolders" resname="Form1_OutlookFolders"><source>Outlook Folders</source><target>Outlookのフォルダー</target></trans-unit>
+      <trans-unit id="Form1_EmailsInFolder" resname="Form1_EmailsInFolder"><source>List of Emails in Folder</source><target>フォルダー内のメール一覧</target></trans-unit>
+      <trans-unit id="Form1_FolderInstructions" resname="Form1_FolderInstructions"><source>Right click in the folder box to create, delete, or rename folders. </source><target>フォルダー欄を右クリックすると、フォルダーの作成、削除、名前の変更ができます。</target></trans-unit>
+      <trans-unit id="Form1_SystemFoldersNote" resname="Form1_SystemFoldersNote"><source>NOTE: System folders cannot be renamed or deleted</source><target>注：システムフォルダーの名前の変更や削除はできません。</target></trans-unit>
+      <trans-unit id="Form1_RecentFolderEmailsNote" resname="Form1_RecentFolderEmailsNote"><source>This example shows the most recent 10 emails in the folder</source><target>この例では、フォルダー内の最新10件のメールを表示します。</target></trans-unit>
+      <trans-unit id="Form1_TabIntroduction" resname="Form1_TabIntroduction"><source>Intro</source><target>概要</target></trans-unit>
+      <trans-unit id="Form1_TabGoogle" resname="Form1_TabGoogle"><source>Google</source><target>Google</target></trans-unit>
+      <trans-unit id="Form1_TabMicrosoft" resname="Form1_TabMicrosoft"><source>Microsoft</source><target>Microsoft</target></trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="menu" source-language="en" target-language="ja">
+    <body>
+      <trans-unit id="MenuItemDemo" resname="MenuItemDemo"><source>Run Demo</source><target>デモを開く</target></trans-unit>
+      <trans-unit id="MenuFolderActions" resname="MenuFolderActions"><source>New folder;Delete folder;Rename folder</source><target>新規フォルダー;フォルダーを削除;フォルダーの名前を変更</target></trans-unit>
+      <trans-unit id="MenuNewFolder" resname="MenuNewFolder"><source>New folder</source><target>新規フォルダー</target></trans-unit>
+      <trans-unit id="MenuLabelActions" resname="MenuLabelActions"><source>New label;Delete label;Rename label</source><target>新規ラベル;ラベルを削除;ラベルの名前を変更</target></trans-unit>
+      <trans-unit id="MenuNewLabel" resname="MenuNewLabel"><source>New label</source><target>新規ラベル</target></trans-unit>
+    </body>
+  </file>
+</xliff>

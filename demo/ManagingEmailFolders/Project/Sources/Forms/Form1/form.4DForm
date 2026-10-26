@@ -1,0 +1,514 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onPageChange",
+		"onValidate",
+		"onClick",
+		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
+		"onDrop",
+		"onAfterKeystroke",
+		"onMenuSelect",
+		"onPluginArea",
+		"onAfterEdit",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"windowTitle": ":xliff:Form1_WindowTitle",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"text": ":xliff:Form1_TabControl",
+					"top": 20,
+					"left": 20,
+					"width": 1395,
+					"height": 690,
+					"dataSourceTypeHint": "arrayText",
+					"dataSource": "myTabs",
+					"action": "gotoPage"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Text5": {
+					"type": "text",
+					"text": ":xliff:Form1_Introduction",
+					"top": 59,
+					"left": 46,
+					"width": 728,
+					"height": 445,
+					"fontSize": 24,
+					"fontWeight": "bold"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Button2": {
+					"type": "button",
+					"text": ":xliff:Form1_SignInGoogle",
+					"top": 136,
+					"left": 42,
+					"width": 202,
+					"height": 52,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button2.4dm"
+				},
+				"Text": {
+					"type": "text",
+					"text": ":xliff:Form1_SendingEmails",
+					"top": 202,
+					"left": 42,
+					"width": 342,
+					"height": 17,
+					"fontSize": 14,
+					"fontWeight": "bold"
+				},
+				"Text1": {
+					"type": "text",
+					"text": ":xliff:Form1_To",
+					"top": 228,
+					"left": 42,
+					"width": 97,
+					"height": 16
+				},
+				"Text2": {
+					"type": "text",
+					"text": ":xliff:Form1_From",
+					"top": 251,
+					"left": 42,
+					"width": 97,
+					"height": 16
+				},
+				"Text3": {
+					"type": "text",
+					"text": ":xliff:Form1_Subject",
+					"top": 273,
+					"left": 42,
+					"width": 97,
+					"height": 16
+				},
+				"Text4": {
+					"type": "text",
+					"text": ":xliff:Form1_Body",
+					"top": 298,
+					"left": 42,
+					"width": 97,
+					"height": 16
+				},
+				"Input": {
+					"type": "input",
+					"left": 113,
+					"top": 228,
+					"width": 395,
+					"height": 17,
+					"dataSource": "Form:C1466.mail.to"
+				},
+				"Input1": {
+					"type": "input",
+					"left": 113,
+					"top": 251,
+					"width": 395,
+					"height": 17,
+					"dataSource": "Form:C1466.mail.from"
+				},
+				"Input2": {
+					"type": "input",
+					"left": 113,
+					"top": 273,
+					"width": 395,
+					"height": 17,
+					"dataSource": "Form:C1466.mail.subject"
+				},
+				"Input3": {
+					"type": "input",
+					"left": 113,
+					"top": 298,
+					"width": 395,
+					"height": 225,
+					"dataSource": "Form:C1466.mail.textBody"
+				},
+				"Button4": {
+					"type": "button",
+					"text": ":xliff:Form1_SendEmail",
+					"top": 537,
+					"left": 386,
+					"width": 122,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button4.4dm"
+				},
+				"Hierarchical List": {
+					"type": "list",
+					"left": 595,
+					"top": 222,
+					"width": 298,
+					"height": 432,
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"method": "ObjectMethods/Hierarchical List.4dm",
+					"dataSource": "Form:C1466.listManager.listRef"
+				},
+				"Text12": {
+					"type": "text",
+					"text": ":xliff:Form1_GmailLabels",
+					"top": 196,
+					"left": 595,
+					"width": 291,
+					"height": 17,
+					"fontSize": 14,
+					"fontWeight": "bold"
+				},
+				"List Box": {
+					"type": "listbox",
+					"left": 927,
+					"top": 363,
+					"width": 438,
+					"height": 291,
+					"events": [
+						"onClick",
+						"onHeaderClick",
+						"onDataChange",
+						"onSelectionChange"
+					],
+					"dataSource": "Form:C1466.labelList",
+					"listboxType": "collection",
+					"columns": [
+						{
+							"header": {
+								"text": ":xliff:Form1_HeaderLabels",
+								"name": "Header1"
+							},
+							"name": "Column1",
+							"footer": {
+								"name": "Footer1"
+							},
+							"dataSource": "GetLabelPictures(This:C1470.labelIds)",
+							"dataSourceTypeHint": "picture",
+							"width": 101
+						},
+						{
+							"header": {
+								"name": "Header2",
+								"text": ":xliff:Form1_HeaderFrom"
+							},
+							"name": "Column2",
+							"footer": {
+								"name": "Footer2"
+							},
+							"dataSource": "This:C1470.from[0].email"
+						},
+						{
+							"header": {
+								"name": "Header3",
+								"text": ":xliff:Form1_HeaderSubject"
+							},
+							"name": "Column3",
+							"footer": {
+								"name": "Footer3"
+							},
+							"width": 228,
+							"dataSource": "This:C1470.subject"
+						}
+					]
+				},
+				"Text14": {
+					"type": "text",
+					"text": ":xliff:Form1_EmailsWithLabel",
+					"top": 334,
+					"left": 927,
+					"width": 291,
+					"height": 17,
+					"fontSize": 14,
+					"fontWeight": "bold"
+				},
+				"Text15": {
+					"type": "text",
+					"text": ":xliff:Form1_GoogleSignInInstructions",
+					"top": 54,
+					"left": 42,
+					"width": 483,
+					"height": 77
+				},
+				"Text13": {
+					"type": "text",
+					"text": ":xliff:Form1_LabelInstructions",
+					"top": 228,
+					"left": 927,
+					"width": 349,
+					"height": 31
+				},
+				"Text17": {
+					"type": "text",
+					"text": ":xliff:Form1_SystemLabelsNote",
+					"top": 266,
+					"left": 927,
+					"width": 349,
+					"height": 31,
+					"fontWeight": "bold"
+				},
+				"Text21": {
+					"type": "text",
+					"text": ":xliff:Form1_RecentLabelEmailsNote",
+					"top": 663,
+					"left": 927,
+					"width": 443,
+					"height": 31
+				},
+				"Text23": {
+					"type": "text",
+					"text": ":xliff:Form1_TwoFactorNote",
+					"top": 54,
+					"left": 595,
+					"width": 742,
+					"height": 128,
+					"fontSize": 18,
+					"fontWeight": "bold"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Button3": {
+					"type": "button",
+					"text": ":xliff:Form1_SignInMicrosoft",
+					"top": 136,
+					"left": 42,
+					"width": 202,
+					"height": 52,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button3.4dm"
+				},
+				"Text7": {
+					"type": "text",
+					"text": ":xliff:Form1_To",
+					"top": 228,
+					"left": 42,
+					"width": 97,
+					"height": 16
+				},
+				"Text8": {
+					"type": "text",
+					"text": ":xliff:Form1_From",
+					"top": 251,
+					"left": 42,
+					"width": 97,
+					"height": 16
+				},
+				"Text9": {
+					"type": "text",
+					"text": ":xliff:Form1_Subject",
+					"top": 273,
+					"left": 42,
+					"width": 97,
+					"height": 16
+				},
+				"Text10": {
+					"type": "text",
+					"text": ":xliff:Form1_Body",
+					"top": 298,
+					"left": 42,
+					"width": 97,
+					"height": 16
+				},
+				"Input4": {
+					"type": "input",
+					"left": 113,
+					"top": 228,
+					"width": 395,
+					"height": 17,
+					"dataSource": "Form:C1466.mail365.to"
+				},
+				"Input5": {
+					"type": "input",
+					"left": 113,
+					"top": 251,
+					"width": 395,
+					"height": 17,
+					"dataSource": "Form:C1466.mail365.from"
+				},
+				"Input6": {
+					"type": "input",
+					"left": 113,
+					"top": 273,
+					"width": 395,
+					"height": 17,
+					"dataSource": "Form:C1466.mail365.subject"
+				},
+				"Input7": {
+					"type": "input",
+					"left": 113,
+					"top": 298,
+					"width": 395,
+					"height": 225,
+					"dataSource": "Form:C1466.mail365.textBody"
+				},
+				"Button5": {
+					"type": "button",
+					"text": ":xliff:Form1_SendEmail",
+					"top": 537,
+					"left": 386,
+					"width": 122,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button5.4dm"
+				},
+				"Text11": {
+					"type": "text",
+					"text": ":xliff:Form1_OutlookAccountNote",
+					"top": 55,
+					"left": 42,
+					"width": 742,
+					"height": 48,
+					"fontSize": 18,
+					"fontWeight": "bold"
+				},
+				"Text6": {
+					"type": "text",
+					"text": ":xliff:Form1_SendingEmails",
+					"top": 202,
+					"left": 42,
+					"width": 342,
+					"height": 17,
+					"fontSize": 14,
+					"fontWeight": "bold"
+				},
+				"Text16": {
+					"type": "text",
+					"text": ":xliff:Form1_OutlookFolders",
+					"top": 196,
+					"left": 595,
+					"width": 291,
+					"height": 17,
+					"fontSize": 14,
+					"fontWeight": "bold"
+				},
+				"Hierarchical List1": {
+					"type": "list",
+					"left": 595,
+					"top": 222,
+					"width": 298,
+					"height": 432,
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"method": "ObjectMethods/Hierarchical List1.4dm",
+					"dataSource": "Form:C1466.folders.listRef"
+				},
+				"List Box1": {
+					"type": "listbox",
+					"left": 927,
+					"top": 363,
+					"width": 438,
+					"height": 291,
+					"events": [
+						"onClick",
+						"onHeaderClick",
+						"onDataChange",
+						"onSelectionChange"
+					],
+					"dataSource": "Form:C1466.mailsMicro",
+					"listboxType": "collection",
+					"columns": [
+						{
+							"header": {
+								"name": "Header5",
+								"text": ":xliff:Form1_HeaderFrom"
+							},
+							"name": "Column5",
+							"footer": {
+								"name": "Footer5"
+							},
+							"dataSource": "This:C1470.from.emailAddress.address"
+						},
+						{
+							"header": {
+								"name": "Header6",
+								"text": ":xliff:Form1_HeaderSubject"
+							},
+							"name": "Column6",
+							"footer": {
+								"name": "Footer6"
+							},
+							"width": 292,
+							"dataSource": "This:C1470.subject"
+						}
+					]
+				},
+				"Text18": {
+					"type": "text",
+					"text": ":xliff:Form1_EmailsInFolder",
+					"top": 334,
+					"left": 927,
+					"width": 291,
+					"height": 17,
+					"fontSize": 14,
+					"fontWeight": "bold"
+				},
+				"Text19": {
+					"type": "text",
+					"text": ":xliff:Form1_FolderInstructions",
+					"top": 228,
+					"left": 927,
+					"width": 349,
+					"height": 31
+				},
+				"Text20": {
+					"type": "text",
+					"text": ":xliff:Form1_SystemFoldersNote",
+					"top": 266,
+					"left": 927,
+					"width": 349,
+					"height": 31,
+					"fontWeight": "bold"
+				},
+				"Text22": {
+					"type": "text",
+					"text": ":xliff:Form1_RecentFolderEmailsNote",
+					"top": 663,
+					"left": 927,
+					"width": 438,
+					"height": 31
+				}
+			}
+		}
+	],
+	"geometryStamp": 358,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"method": "method.4dm"
+}

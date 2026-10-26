@@ -187,9 +187,10 @@ submodule is updated. Reusable procedures belong in that skill, not in this refe
 1. Check: code blocks are compared by position, ```` ```text ```` blocks are skipped, and the sets of figure
    references must match. Any mismatch aborts with a diff.
 2. Render the figures.
-3. Markdown → HTML (`fenced_code`, `tables`, `attr_list`).
+3. Markdown → HTML (`fenced_code`, `tables`, `attr_list`, `sane_lists`).
    - The cover comes from the first lines of `<tgt>.md`, and the TOC is generated from the headings.
    - Figures become `<figure>` with `width:{width_pt}pt`.
+   - Ordered lists retain their starting number, including instructions interrupted by figures.
 4. The CSS is `style/style.css` plus injected `:root{--accent}` and `@page{size}`. Chrome is run headless
    (`--headless=new --no-pdf-header-footer --print-to-pdf`) twice; the second pass fills in the TOC page numbers,
    found by searching each heading in the first-pass PDF with pymupdf. Page numbers use `@page` margin boxes
@@ -211,7 +212,13 @@ The workflow is in the skill `technote-localise-4d-project`; the 4D rules are in
   runs `Compile project` on the whole project (expect `success: true` and no errors). `--new-data` starts with an
   empty data file; `--component DIR` copies a component bundle (e.g. from the 4D dependency cache: tool4d does not
   download GitHub dependencies) into `Components/`. The repository is never modified. tool4d is looked up in `$TOOL4D`, `tools/4dcli/` (provisioned by the `4dcli` skill), then the standard
-  install locations.
+  install locations. A nonzero runtime exit, missing/empty result file, or a compile result without
+  `"success": true` fails the command.
+- **Offline localisation checks:** `.venv/bin/python -m unittest discover -s tools -p 'test_demo_localisation.py'`
+  checks the demo's bilingual resources, placeholders, references, bindings and credential templates.
+  Set `RUN_DEMO_RUNTIME=1` to also check exact English/Japanese string resolution and configuration error paths
+  through `tools/tool4d.py`. Set `TOOL4D`, `NETKIT_COMPONENT` and `SVG_COMPONENT` to compatible local installations
+  when needed. These checks do not sign in, send mail or modify account folders.
 - Forms can't be displayed headlessly: ask the user to check window flow and label fit in 4D.
 
 ## Verification checklist (before release)

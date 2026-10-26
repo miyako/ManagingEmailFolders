@@ -1,0 +1,78 @@
+日本語版デモの使い方
+==================
+
+4D NetKitと4D SVGが利用できる4DでProject/ManagingEmailFolders.4DProjectを開きます。
+テクニカルノートの動作要件は4D 20 R6以降です。プロジェクトの互換性設定は
+原本のままです。新しい4Dでもコマンドを識別できるよう、Get localized stringには
+編集者が指定した:C991を付けています。
+
+画面、メニュー、ダイアログには、4DのUI言語に応じた日本語または英語が表示されます。
+起動時にメイン画面が開きます。閉じた後は「デモを開く」で再び開けます。
+同じ画面が開いている場合は、その画面を再利用します。
+
+OAuthの設定
+-----------
+Resources/oauth.example.jsonをResources/oauth.local.jsonにコピーして、ご自身で
+登録したアプリケーションの認証情報を入力してください。
+
+Google: clientIdとclientSecretが必要です。
+Microsoft: clientIdが必要です。
+リダイレクトURIは、どちらもhttp://127.0.0.1:50993/authorize/です。
+スコープは原本と同じです。Googleはgmail.modify、Microsoftは
+https://graph.microsoft.com/.defaultを使用します。
+
+oauth.local.json、従来のclient_secrets.json、Data/、実行時のSettings/は
+Gitの管理対象外です。配布用ZIPには実際の認証情報を含めないでください。
+既存のローカル設定は保持されています。従来のclient_secrets.jsonは変更せず
+残していますが、プロバイダーのメソッドはoauth.local.jsonを読み込みます。
+認証情報は翻訳対象ではありません。
+
+操作上の注意
+------------
+メール、アドレス、フォルダー名、ラベル名は、接続したアカウントの実データです。
+翻訳やサンプルデータへの置換はおこないません。APIのエラー詳細も原文を保持します。
+送信、作成、名前の変更、削除は、実際のアカウントに影響する操作です。
+自動チェックではサインインもこれらの操作もおこないません。
+
+Microsoftの送信ボタンには、Google側の入力データを確認してしまう原本の問題が
+あります。このローカライズでは、承認された範囲を超える動作修正はおこなっていません。
+
+4Dでの目視確認
+--------------
+「概要」「Google」「Microsoft」の3つのタブ、説明文、列見出し、右クリックの
+メニュー、入力と確認のダイアログで、日本語の表示と文字の収まりを確認してください。
+画面を閉じて再度開く操作と、画面が開いている状態での「デモを開く」も確認してください。
+tool4dでのチェックは、これらのGUIやネイティブコントロールの見た目を保証しません。
+
+English setup
+=============
+
+Open Project/ManagingEmailFolders.4DProject in a suitable 4D installation
+with 4D NetKit and 4D SVG available. The technical note requires 4D 20 R6
+or later. The original compatibility setting is retained. The editor-supplied
+:C991 token identifies Get localized string on newer runtimes too.
+
+English and Japanese resources follow the 4D UI language. The main window
+opens at startup; Run Demo opens it again or reuses the existing window.
+
+Copy Resources/oauth.example.json to Resources/oauth.local.json. Enter
+your own Google clientId/clientSecret and Microsoft clientId. Both providers
+use http://127.0.0.1:50993/authorize/ as the redirect URI. Original scopes
+are unchanged: Google's gmail.modify and Microsoft's Graph .default.
+
+Local credentials, the original client_secrets.json, Data/ and runtime
+Settings/ are ignored by Git. Never include actual credentials in a
+distribution ZIP. The existing client_secrets.json is preserved but is not
+used by the provider methods; they now read oauth.local.json.
+
+Mail content, addresses and fetched folder/label names are real account
+data, not translatable sample records. Provider error details are preserved.
+Sending mail and creating, renaming or deleting folders/labels affect the
+connected account. Offline checks do not sign in or perform these operations.
+
+The original Microsoft Send handler checks Google-form input. This known
+pre-existing functional issue is deliberately not repaired in this localisation.
+
+Review all three tabs, Japanese text fit, context menus, dialogs and repeated
+window opening in full GUI 4D. Headless tool4d checks cannot verify native UI
+appearance.

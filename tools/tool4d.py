@@ -3,7 +3,8 @@
 
 The repository copy is never modified. The test method must write its results
 to File("/PACKAGE/agent-test.txt") and end with QUIT 4D; this script prints
-that file.
+that file. Nonzero runtime exits, missing/empty output, and unsuccessful
+compile results fail the command.
 
   python tools/tool4d.py demo/MyProject --compile          # whole-project compile (Compile project); for syntax checks use the 4dlsp skill
   python tools/tool4d.py demo/MyProject test.4dm           # run a test method
@@ -20,6 +21,7 @@ Token rule: write command names without :Cnnn suffixes unless verified in the pr
 """
 import argparse
 import glob
+import json
 import os
 import shutil
 import subprocess
@@ -85,11 +87,20 @@ def main():
         cmd += [f"--data={tmp / 'Data' / 'data.4DD'}"] if args.data or args.new_data else ["--dataless"]
         cmd += ["--create-data"] if args.new_data else []
         run = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+        if run.returncode != 0:
+            print(run.stdout[-2000:], run.stderr[-2000:], sep="\n", file=sys.stderr)
+            sys.exit(f"tool4d exited with status {run.returncode}")
         out = tmp / "agent-test.txt"
         if not out.exists():
             print(run.stdout[-2000:], run.stderr[-2000:], sep="\n", file=sys.stderr)
             sys.exit("tool4d produced no agent-test.txt (did the method write it and QUIT 4D?)")
-        print(out.read_text(encoding="utf-8"))
+        result = out.read_text(encoding="utf-8")
+        if not result.strip():
+            sys.exit("tool4d produced an empty agent-test.txt")
+        print(result)
+        if args.compile or not args.method:
+            if json.loads(result).get("success") is not True:
+                sys.exit("tool4d compilation failed; see the compiler result above")
 
 
 if __name__ == "__main__":

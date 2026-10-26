@@ -11,7 +11,10 @@ demo/*/Logs/
 demo/*/userPreferences.*/
 demo/*/Project/DerivedData/
 demo/*/Libraries/
-# Settings/ is tracked or not per project: ask the user (see the 4dproject skill)
+# Machine-specific settings and local OAuth configuration; source settings remain tracked.
+demo/*/Settings/
+demo/*/Resources/client_secrets.json
+demo/*/Resources/oauth.local.json
 
 # Tools provisioned by the skills in .agents (4dtools). Do NOT ignore the whole tools/ folder:
 # the localisation pipeline in tools/*.py is committed.

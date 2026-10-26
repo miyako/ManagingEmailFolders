@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="messages" source-language="en" target-language="en">
+    <body>
+      <trans-unit id="AlertEmailSent" resname="AlertEmailSent"><source>Email sent</source><target>Email sent</target></trans-unit>
+      <trans-unit id="AlertError" resname="AlertError"><source>Error: {error}</source><target>Error: {error}</target></trans-unit>
+      <trans-unit id="AlertMissingMailFields" resname="AlertMissingMailFields"><source>Fields "from" and "to" must be filled.</source><target>Fields "from" and "to" must be filled.</target></trans-unit>
+      <trans-unit id="AlertButtonCreate" resname="AlertButtonCreate"><source>Create</source><target>Create</target></trans-unit>
+      <trans-unit id="AlertButtonDelete" resname="AlertButtonDelete"><source>Delete</source><target>Delete</target></trans-unit>
+      <trans-unit id="AlertButtonRename" resname="AlertButtonRename"><source>Rename</source><target>Rename</target></trans-unit>
+      <trans-unit id="RequestNewLabelName" resname="RequestNewLabelName"><source>New label name:</source><target>New label name:</target></trans-unit>
+      <trans-unit id="ConfirmDeleteLabel" resname="ConfirmDeleteLabel"><source>Would you delete the label: {name}</source><target>Would you delete the label: {name}</target></trans-unit>
+      <trans-unit id="RequestRenameLabel" resname="RequestRenameLabel"><source>Rename label '{name}' to:</source><target>Rename label '{name}' to:</target></trans-unit>
+      <trans-unit id="RequestNewFolderName" resname="RequestNewFolderName"><source>New folder name:</source><target>New folder name:</target></trans-unit>
+      <trans-unit id="ConfirmDeleteFolder" resname="ConfirmDeleteFolder"><source>Would you delete the folder: {name}</source><target>Would you delete the folder: {name}</target></trans-unit>
+      <trans-unit id="RequestRenameFolder" resname="RequestRenameFolder"><source>Rename folder '{name}' to:</source><target>Rename folder '{name}' to:</target></trans-unit>
+    </body>
+  </file>
+</xliff>
