@@ -92,6 +92,15 @@ class DemoLocalisationTests(unittest.TestCase):
         self.assertIn('DIALOG("Form1"; $params; *)', start)
         self.assertNotIn("CLOSE WINDOW", start)
 
+    def test_component_dependencies_are_declared(self):
+        manifest = json.loads((SOURCES / "dependencies.json").read_text())
+        self.assertIsInstance(manifest["version"], int)
+        for name, repository in (("4D NetKit", "4d/4D-NetKit"), ("4D SVG", "4d/4D-SVG")):
+            with self.subTest(component=name):
+                dependency = manifest["dependencies"][name]
+                self.assertEqual(dependency["github"], repository)
+                self.assertEqual(dependency["version"], "4d")
+
     def test_private_configuration_is_not_embedded(self):
         for path in SOURCES.rglob("*.4dm"):
             self.assertNotRegex(path.read_text(), r'\.(?:clientId|clientSecret)\s*:=\s*"',
