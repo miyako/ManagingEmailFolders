@@ -11,16 +11,17 @@ OAuth 2.0による接続とアクセストークンの取得から、メール�
 
 | | |
 |---|---|
-| PDF（日本語） | [24-13_4DNetKit_ja.pdf](https://github.com/miyako/ManagingEmailFolders/releases/download/v1.0.0/24-13_4DNetKit_ja.pdf) |
-| 4Dデモ | [ManagingEmailFolders.zip](https://github.com/miyako/ManagingEmailFolders/releases/download/v1.0.0/ManagingEmailFolders.zip) |
+| PDF（日本語） | [24-13_4DNetKit_ja.pdf](https://github.com/miyako/ManagingEmailFolders/releases/download/v1.0.1/24-13_4DNetKit_ja.pdf) |
+| 4Dデモ | [ManagingEmailFolders.zip](https://github.com/miyako/ManagingEmailFolders/releases/download/v1.0.1/ManagingEmailFolders.zip) |
 | 原文（英語） | [document/24-13_4DNetKit.pdf](document/24-13_4DNetKit.pdf) |
 
-[v1.0.0](https://github.com/miyako/ManagingEmailFolders/releases/tag/v1.0.0)から日本語PDFと4Dデモをダウンロードできます。
+[v1.0.1](https://github.com/miyako/ManagingEmailFolders/releases/tag/v1.0.1)から日本語PDFと4Dデモをダウンロードできます。
 
 ## Demo
 
 - 原文の動作要件は4D 20 R6以降です。ローカライズしたデモは4D 21 R3でコンパイルとオフラインチェックを実施しています。
 - 4D NetKitと4D SVGが利用できる4Dで、`demo/ManagingEmailFolders/Project/ManagingEmailFolders.4DProject`を開きます。
+- 両コンポーネントの依存関係は`Project/Sources/dependencies.json`に宣言しています。バージョン指定はどちらも`4d`です。
 - UIの言語は日本語・英語です。4DのUI言語に従い、翻訳リソースは`Resources/ja.lproj/`と`Resources/en.lproj/`にあります。
 - 起動時にメイン画面を開きます。閉じた後は「デモを開く」で再表示でき、同じ画面が開いている場合はその画面を再利用します。
 
