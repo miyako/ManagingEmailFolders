@@ -78,8 +78,10 @@ The approved cover omits the note number and uses the byline `Trina Nguyen（4D 
 | Token response | トークン応答 | 図01。 |
 | Use token to call Google API | トークンでGoogle APIを呼び出す | 図01では原文と同じ2行に分ける。 |
 
-UIの暫定方針：スクリーンショット内のGoogle Cloud、Googleアカウント、Microsoftの表示文字列は、
-対応する公式日本語リソースと描画条件を確認するまで画像・本文ともに英語を保持します。
+編集者の承認により、このドラフトでは図02〜13のスクリーンショットを原文の英語のまま保持し、
+対応する本文の引用UIラベルも英語のままとします。Google Cloudの一部のナビゲーション項目は
+現行アプリケーションの公式日本語リソースと対応付けられましたが、撮影時のフォントや描画条件は
+未確認です。その他の画面には、当時の正確な日本語文言が未確認の箇所もあります。
 この用語集の説明訳を、未検証の公式UI文字列として画像に描画しません。
 
 [ms-access]: https://blog.4d.com/ja/4d-and-microsoft-365-access/
